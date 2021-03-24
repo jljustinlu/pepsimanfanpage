@@ -1,0 +1,108 @@
+header{
+	background-color: white;
+	padding: 2em;
+	border: solid 4px navy;
+}
+
+.navlink{
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding-top: 2em;
+	
+}
+
+.navitem a{
+	color: navy;
+	text-decoration: none;
+	border-radius: 1em;
+	padding: 1em 2em;
+	background-color: silver;
+	opacity: 1;
+}
+
+body{
+	background-color: silver;
+	font-family: Georgia, serif;
+	font-size: 12px;
+	color: navy;
+}
+
+p{
+	margin-top: 1em;
+	margin-bottom: 1em;
+	text-align: center;
+}
+
+h1{
+	font-size: 2em;
+	text-align: center;
+}
+
+h2{
+	font-size: 1.5em;
+	text-align: center;
+}
+
+a.skip{
+	text-decoration: none;
+	position: absolute;
+}
+
+img{
+	display: block;
+	margin: 0 auto;
+}
+
+.drinks{
+	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-gap: 1em;
+}
+
+.drinks img:hover{
+	animation: shake 0.2s;
+}
+
+@keyframes shake{
+	0% { transform: translate(1px, 1px) rotate(0deg); }
+	25% { transform: translate(-1px, -2px) rotate(-2deg); }
+	50% { transform: translate(-3px, 0px) rotate(2deg); }
+	75% { transform: translate(3px, 2px) rotate(0deg); }
+	100% { transform: translate(1px, -1px) rotate(2deg); }
+}
+
+.drinks a{
+	color: navy;
+}
+
+.video{
+	text-align: center;
+}
+
+.current a{
+	background-color: darkgray;
+}
+
+.navitem a:hover{
+	opacity: .75;
+}
+
+@media screen and (min-width: 700px){
+	.drinks{
+		grid-template-columns: 1fr 1fr;
+	}
+	body{
+		font-size: 1.25em;
+	}
+}
+
+@media screen and (min-width: 1200px){
+	.drinks{
+		grid-template-columns: 1fr 1fr 1fr;
+	}
+	body{
+		font-size: 1.5em;
+	}
+}
