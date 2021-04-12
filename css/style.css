@@ -1,23 +1,24 @@
 header{
-	background-color: white;
-	padding: 2em;
-	border: solid 4px navy;
+	background: url("../images/pepsimandrink.gif");
+	background-repeat: no-repeat;
+	background-size: cover;
+	padding: 10em;
+	background-attachment: fixed;
+	background-position: center;
 }
-
+h1{
+	background-color: white;
+	color: navy;
+}
 .navlink{
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	padding-top: 2em;
-	
 }
 
 .navitem a{
 	color: navy;
 	text-decoration: none;
-	border-radius: 1em;
-	padding: 1em 2em;
-	background-color: silver;
 	opacity: 1;
 }
 
@@ -46,7 +47,13 @@ h2{
 
 a.skip{
 	text-decoration: none;
+	transform: translateY(-200%);
 	position: absolute;
+	color: silver;
+}
+
+a.skip:focus{
+	transform: translateY(0%);
 }
 
 img{
@@ -65,6 +72,10 @@ img{
 	animation: shake 0.2s;
 }
 
+.form{
+	text-align: center;
+}
+
 @keyframes shake{
 	0% { transform: translate(1px, 1px) rotate(0deg); }
 	25% { transform: translate(-1px, -2px) rotate(-2deg); }
@@ -78,11 +89,44 @@ img{
 }
 
 .current a{
-	background-color: darkgray;
+	text-decoration: underline;
+	color: navy;
 }
 
 .navitem a:hover{
-	opacity: .75;
+	opacity: .5;
+}
+
+.container{
+	display: grid;
+	grid-template-areas: "item1"
+						 "item2"
+						 "item3"
+						 "item4";
+	text-align: center;
+}
+
+.item1{
+	grid-area: item1;
+}
+
+.item2{
+	grid-area: item2;
+}
+
+.item3{
+	grid-area: item3;
+}
+
+.item4{
+	grid-area: item4;
+}
+
+#canvas{
+	margin: auto;
+	display: block;
+	background-color: white;
+	border: 1px solid black;
 }
 
 @media screen and (min-width: 700px){
@@ -91,6 +135,17 @@ img{
 	}
 	body{
 		font-size: 1.25em;
+	}
+	.container{
+		grid-template-areas: "item1 item1"
+							 "item2 item3"
+							 "item4 item4";
+	}
+	.navlink{
+		flex-direction: column;
+	}
+	body{
+		text-align: left;
 	}
 }
 
